@@ -36,6 +36,7 @@ body {
   line-height: 2.5em;
   width: 25em;
   margin: 0 1em;
+  padding: 0 1em;
   background-color: var(--primary-dark-color);
   border: 1px solid var(--primary-color);
   color: var(--text-color);
