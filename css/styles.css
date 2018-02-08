@@ -1,0 +1,19 @@
+:root {
+  --primary-dark-color: #212121;
+  --primary-color: #424242;
+  --accent-color: #E50914;
+  --text-color: white;
+}
+
+h1 {
+  font-size: 200%;
+}
+
+h2 {
+  font-size: 150%;
+}
+
+html, body {
+  height: 100%;
+  font-family: Helvetica;
+}
