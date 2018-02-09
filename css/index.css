@@ -18,12 +18,22 @@ main {
   margin: 0 20%;
 }
 
+.large-img {
+  width: 100%;
+}
+
 .slider {
   margin: 0 4%;
 }
 
 .small-img {
-  padding: .2rem;
+  cursor: pointer;
+  margin: .2rem;
+  border: 2px solid var(--primary-color);
+}
+
+.small-img:hover {
+  transform: scale(1.5);
 }
 
 .toolbar {
@@ -54,4 +64,8 @@ main {
 .icon-search {
   cursor: pointer;
   vertical-align: middle;
+}
+
+footer {
+  padding: 1rem 2rem;
 }
