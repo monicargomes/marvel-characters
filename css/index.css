@@ -1,6 +1,7 @@
 body {
-  background-color: var(--primary-dark-color);
+  background-color: var(--primary-color);
   color: var(--text-color);
+  padding-top: 5rem;
 }
 
 .main-title {
@@ -9,24 +10,27 @@ body {
 }
 
 .featured-character {
-  height: 30em;
+  height: 30rem;
 }
 
 .carousel {
-  height: 30em;
+  height: 30rem;
 }
 
 .toolbar {
-  height: 3em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 2.5rem;
   background-color: var(--primary-dark-color);
-  padding: 1em 0;
+  padding: 1rem 0;
 }
 
 .search {
   float: right;
-  line-height: 2.5em;
-  width: 25em;
-  padding: 0 1em;
+  line-height: 2rem;
+  width: 20rem;
+  padding: 0 1rem;
   background-color: var(--primary-dark-color);
   border: 1px solid var(--primary-color);
   color: var(--text-color);
