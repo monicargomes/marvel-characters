@@ -5,7 +5,9 @@ body {
 }
 
 main {
-  padding: 5rem 2rem 2rem 2rem;
+  width: 80%;
+  margin: auto;
+  padding-top: 5rem;
 
 }
 
@@ -14,27 +16,11 @@ main {
   float: left;
 }
 
-.featured-character {
-  margin: 0 20%;
+.featured-character, .netflix-carousel {
+  width: 80%;
+  margin: auto;
 }
 
-.large-img {
-  width: 100%;
-}
-
-.slider {
-  margin: 0 4%;
-}
-
-.small-img {
-  cursor: pointer;
-  margin: .2rem;
-  border: 2px solid var(--primary-color);
-}
-
-.small-img:hover {
-  transform: scale(1.5);
-}
 
 .toolbar {
   position: fixed;

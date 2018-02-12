@@ -1,0 +1,116 @@
+:root {
+	--transition-time: 500ms;
+	--item-width: 250px;
+	--item-height: calc(var(--item-width) / (calc(16 / 9)));
+	--grow-factor: 1.5;
+	--move-right: 125px;
+	--move-left: calc(calc(var(--move-right) / 2) * -1);
+}
+
+/* =========================================================== */
+/* CONTAINERS */
+.netflix-carousel {
+  width: 100%;
+}
+
+/* OUTER */
+.netflix-carousel-outer-container {
+  overflow: scroll;
+  width: 100%;
+}
+
+/* INNER */
+.netflix-carousel-inner-container {
+  -webkit-transition: var(--transition-time) -webkit-transform;
+  transition: var(--transition-time) -webkit-transform;
+  transition: var(--transition-time) transform;
+  transition: var(--transition-time) transform, var(--transition-time) -webkit-transform;
+  font-size: 0;
+  white-space: nowrap;
+  margin: 70.3125px 0;
+  padding-bottom: 10px;
+}
+
+.netflix-carousel-inner-container:hover {
+  -webkit-transform: translate3d(var(--move-left), 0, 0);
+  transform: translate3d(var(--move-left), 0, 0);
+}
+
+/* =========================================================== */
+/* CAROUSEL ITEM */
+.netflix-carousel-item {
+  position: relative;
+  display: inline-block;
+  width: var(--item-width);
+  height: var(--item-height);
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: var(--transition-time) all;
+  transition: var(--transition-time) all;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+
+.netflix-carousel-item:hover ~ .netflix-carousel-item {
+  -webkit-transform: translate3d(var(--move-right), 0, 0);
+  transform: translate3d(var(--move-right), 0, 0);
+}
+
+.netflix-carousel-inner-container:hover .netflix-carousel-item {
+  opacity: 0.3;
+}
+
+.netflix-carousel-inner-container:hover .netflix-carousel-item:hover {
+  -webkit-transform: scale(var(--grow-factor));
+  transform: scale(var(--grow-factor));
+  opacity: 1;
+}
+
+/* =========================================================== */
+/* ITEM ELEMENTS */
+.netflix-carousel-item-img {
+  width: var(--item-width);
+  height: var(--item-height);
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.netflix-carousel-item-title {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  color: #ecf0f1;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  line-height: 1.25vw;
+  font-size: 1.4em;
+}
+
+/* =========================================================== */
+/* ITEM DETAILS */
+.netflix-carousel-item-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 10px;
+  opacity: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0)));
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  -webkit-transition: var(--transition-time) opacity;
+  transition: var(--transition-time) opacity;
+}
+
+.netflix-carousel-item-details:after, .netflix-carousel-item-details:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: #000;
+}
+
+.netflix-carousel-item:hover .netflix-carousel-item-details {
+  opacity: 1;
+}

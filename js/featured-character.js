@@ -1,8 +1,6 @@
-$('.small-img').click(function(){
-  var imageName = $(this).attr('src').slice(9);
+$(document).ready(loadFeaturedCharacter())
 
-  $('.large-img').attr('src', 'img/large' + imageName);
-
-  $('html').animate({ scrollTop: 0 }, "slow");
-
-})
+function loadFeaturedCharacter() {
+    let featuredCharacter = readFeaturedCharacter();
+    $('.large-img').attr('src', featuredCharacter.largeImg);
+}
