@@ -42,7 +42,7 @@ const characters = [
     "description": "Caught in a gamma bomb explosion while trying to save the life of a teenager, Dr. Bruce Banner was transformed into the incredibly powerful creature called the Hulk. An all too often misunderstood hero, the angrier the Hulk gets, the stronger the Hulk gets."
   },
   {
-    "name": "wolverine",
+    "name": "Wolverine",
     "id": "7",
     "smallImg": "img/small-wolverine.jpg",
     "largeImg": "img/large-wolverine.jpg",

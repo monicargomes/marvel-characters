@@ -6,9 +6,10 @@ function loadItems() {
   characters.forEach((character) => {
     createItem(character.smallImg, character.name).click(() => {
       $('.large-img').attr('src', character.largeImg);
+      $('.character-name').text(character.name);
+      $('.character-description').text(character.description);
       $('html').animate({ scrollTop: 0 }, 'slow');
     });
-
   });
 }
 
@@ -20,29 +21,16 @@ function createItem(image, text){
   var itemTitle = $('<div>').addClass('netflix-carousel-item-title').text(text).appendTo(itemDetails);
 
   return item.appendTo($('.netflix-carousel-inner-container'));
-
 }
 
+$('.icon-right').click(function() {
+      $('.netflix-carousel-outer-container').animate({
+        scrollLeft: "+=500px"
+      }, "slow");
+   });
 
-
-// const ITEM_PARENT='.netflix-carousel-inner-container'
-// const TEMPLATE = `
-//   <div class="netflix-carousel-item">
-//     <div class="netflix-carousel-item-img-container">
-//       <img class="netflix-carousel-item-img" src="IMAGE" />
-//     </div>
-//
-//     <div class="netflix-carousel-item-details">
-//       <div class="netflix-carousel-item-title">TITLE</div>
-//     </div>
-//   </div>
-// `
-//
-// function loadItems() {
-//   let characters = listCharacters();
-//   characters.forEach((character) => {
-//     let currentCharacter = TEMPLATE.replace('IMAGE', character.smallImg)
-//     currentCharacter = currentCharacter.replace('TITLE', character.name)
-//     $(ITEM_PARENT).append(currentCharacter)
-//   })
-// }
+ $('.icon-left').click(function() {
+      $('.netflix-carousel-outer-container').animate({
+        scrollLeft: "-=500px"
+      }, "slow");
+ });

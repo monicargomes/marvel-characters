@@ -1,26 +1,7 @@
-body {
-  background-color: var(--primary-color);
-  color: var(--text-color);
-
-}
-
-main {
-  width: 80%;
-  margin: auto;
-  padding-top: 5rem;
-
-}
-
 .main-title {
   color: var(--accent-color);
   float: left;
 }
-
-.featured-character, .netflix-carousel {
-  width: 80%;
-  margin: auto;
-}
-
 
 .toolbar {
   position: fixed;
@@ -52,6 +33,24 @@ main {
   vertical-align: middle;
 }
 
-footer {
-  padding: 1rem 2rem;
+.featured-character {
+  width: 80%;
+  margin: auto;
+}
+
+.large-img {
+  width: 100%;
+  margin:auto;
+}
+
+.character-description {
+  padding: 2rem 0;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.icon-right, .icon-left {
+  display: inline;
+  width: 10%;
+  vertical-align: middle;
 }

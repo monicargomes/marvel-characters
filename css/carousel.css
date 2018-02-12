@@ -7,16 +7,22 @@
 	--move-left: calc(calc(var(--move-right) / 2) * -1);
 }
 
+.icon-right, .icon-left {
+	cursor: pointer;
+	margin: calc(40px + var(--item-height) /2) 0;
+	width: 2%;
+}
+
 /* =========================================================== */
 /* CONTAINERS */
 .netflix-carousel {
   width: 100%;
+  display: flex;
 }
 
 /* OUTER */
 .netflix-carousel-outer-container {
   overflow: scroll;
-  width: 100%;
 }
 
 /* INNER */
@@ -27,8 +33,7 @@
   transition: var(--transition-time) transform, var(--transition-time) -webkit-transform;
   font-size: 0;
   white-space: nowrap;
-  margin: 70.3125px 0;
-  padding-bottom: 10px;
+  margin: 50px 0;
 }
 
 .netflix-carousel-inner-container:hover {

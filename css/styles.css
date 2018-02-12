@@ -5,8 +5,20 @@
   --text-color: white;
 }
 
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+main {
+  width: 80%;
+  margin: auto;
+  padding-top: 5rem;
+}
+
 h1 {
   font-size: 2rem;
+  font-weight: bold;
 }
 
 h2 {
@@ -14,9 +26,11 @@ h2 {
   padding: 1rem 0;
 }
 
-
-
 html, body {
   font-family: Helvetica;
-  font-size: 14px;
+  font-size: 16px;
+}
+
+footer {
+  padding: 1rem 2rem;
 }
