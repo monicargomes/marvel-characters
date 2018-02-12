@@ -1,6 +1,7 @@
 .main-title {
-  color: var(--accent-color);
+  color: var(--text-color);
   float: left;
+  margin: .5rem;
 }
 
 .toolbar {
@@ -10,6 +11,11 @@
   height: 2.5rem;
   background-color: var(--primary-dark-color);
   padding: 1rem 2rem;
+}
+
+.marvel-logo {
+  height: 100%;
+  float: left;
 }
 
 .search-input {
@@ -47,10 +53,4 @@
   padding: 2rem 0;
   line-height: 1.5;
   text-align: justify;
-}
-
-.icon-right, .icon-left {
-  display: inline;
-  width: 10%;
-  vertical-align: middle;
 }

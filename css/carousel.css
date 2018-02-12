@@ -9,8 +9,8 @@
 
 .icon-right, .icon-left {
 	cursor: pointer;
-	margin: calc(40px + var(--item-height) /2) 0;
-	width: 2%;
+	margin: auto;
+	font-size: 3rem;
 }
 
 /* =========================================================== */
