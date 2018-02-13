@@ -23,13 +23,13 @@ function createItem(image, text){
   return item.appendTo($('.netflix-carousel-inner-container'));
 }
 
-$('.icon-right').click(function() {
+$('.icon-right').click(() => {
       $('.netflix-carousel-outer-container').animate({
         scrollLeft: "+=500px"
       }, "slow");
    });
 
- $('.icon-left').click(function() {
+ $('.icon-left').click(() => {
       $('.netflix-carousel-outer-container').animate({
         scrollLeft: "-=500px"
       }, "slow");
