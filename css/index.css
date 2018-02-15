@@ -24,8 +24,9 @@
   width: 20rem;
   padding: 0 1rem;
   background-color: var(--primary-dark-color);
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--text-color);
   color: var(--text-color);
+  font-size: 1rem;
 
 }
 
@@ -37,20 +38,33 @@
 .icon-search {
   cursor: pointer;
   vertical-align: middle;
+  font-size: 2.2rem;
 }
 
 .featured-character {
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  display: flex;
+  background-image: linear-gradient(to right, transparent, var(--primary-color) 40%);
+
 }
 
 .large-img {
-  width: 100%;
-  margin:auto;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
 }
 
-.character-description {
-  padding: 2rem 0;
+.featured-character-details {
+  width: 50%;
+  height: 100%;
+}
+
+.character-name, .character-description {
+  padding: 1rem 1rem;
   line-height: 1.5;
   text-align: justify;
+}
+
+.carousel-title {
+  padding: 2rem 0 0 0;
 }

@@ -13,7 +13,7 @@ body {
 main {
   width: 80%;
   margin: auto;
-  padding-top: 5rem;
+  padding: 6rem 0 5rem 0;
 }
 
 h1 {
@@ -22,7 +22,6 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
-  padding: 1rem 0;
 }
 
 html, body {
@@ -32,4 +31,9 @@ html, body {
 
 footer {
   padding: 1rem 2rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  text-align: center;
 }

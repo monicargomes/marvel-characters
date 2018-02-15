@@ -1,11 +1,8 @@
-$(document).ready(loadItems());
-
-function loadItems() {
-  var characters = listCharacters();
+function loadItems(characters) {
 
   characters.forEach((character) => {
-    createItem(character.smallImg, character.name).click(() => {
-      $('.large-img').attr('src', character.largeImg);
+    createItem(character.thumbnail.path+"/landscape_xlarge."+character.thumbnail.extension, character.name).click(() => {
+      $('.large-img').attr('src', character.thumbnail.path+"/detail."+character.thumbnail.extension);
       $('.character-name').text(character.name);
       $('.character-description').text(character.description);
       $('html').animate({ scrollTop: 0 }, 'slow');
@@ -14,23 +11,23 @@ function loadItems() {
 }
 
 function createItem(image, text){
-  var item = $('<div>').addClass('netflix-carousel-item');
-  var itemImgContainer = $('<div>').addClass('netflix-carousel-item-img-container').appendTo(item);
-  var itemImg = $('<img>').addClass('netflix-carousel-item-img').attr('src', image).appendTo(itemImgContainer);
-  var itemDetails = $('<div>').addClass('netflix-carousel-item-details').appendTo(item);
-  var itemTitle = $('<div>').addClass('netflix-carousel-item-title').text(text).appendTo(itemDetails);
+  var item = $('<div>').addClass('carousel-item');
+  var itemImgContainer = $('<div>').addClass('carousel-item-img-container').appendTo(item);
+  var itemImg = $('<img>').addClass('carousel-item-img').attr('src', image).appendTo(itemImgContainer);
+  var itemDetails = $('<div>').addClass('carousel-item-details').appendTo(item);
+  var itemTitle = $('<div>').addClass('carousel-item-title').text(text).appendTo(itemDetails);
 
-  return item.appendTo($('.netflix-carousel-inner-container'));
+  return item.appendTo($('.carousel-inner-container'));
 }
 
 $('.icon-right').click(() => {
-      $('.netflix-carousel-outer-container').animate({
-        scrollLeft: "+=500px"
+      $('.carousel-outer-container').animate({
+        scrollLeft: "+=400px"
       }, "slow");
    });
 
  $('.icon-left').click(() => {
-      $('.netflix-carousel-outer-container').animate({
-        scrollLeft: "-=500px"
+      $('.carousel-outer-container').animate({
+        scrollLeft: "-=400px"
       }, "slow");
  });

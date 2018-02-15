@@ -15,35 +15,35 @@
 
 /* =========================================================== */
 /* CONTAINERS */
-.netflix-carousel {
+.carousel {
   width: 100%;
   display: flex;
 }
 
 /* OUTER */
-.netflix-carousel-outer-container {
+.carousel-outer-container {
   overflow: scroll;
 }
 
 /* INNER */
-.netflix-carousel-inner-container {
+.carousel-inner-container {
   -webkit-transition: var(--transition-time) -webkit-transform;
   transition: var(--transition-time) -webkit-transform;
   transition: var(--transition-time) transform;
   transition: var(--transition-time) transform, var(--transition-time) -webkit-transform;
   font-size: 0;
   white-space: nowrap;
-  margin: 50px 0;
+  margin: 40px 0;
 }
 
-.netflix-carousel-inner-container:hover {
+.carousel-inner-container:hover {
   -webkit-transform: translate3d(var(--move-left), 0, 0);
   transform: translate3d(var(--move-left), 0, 0);
 }
 
 /* =========================================================== */
 /* CAROUSEL ITEM */
-.netflix-carousel-item {
+.carousel-item {
   position: relative;
   display: inline-block;
   width: var(--item-width);
@@ -57,16 +57,16 @@
   transform-origin: center left;
 }
 
-.netflix-carousel-item:hover ~ .netflix-carousel-item {
+.carousel-item:hover ~ .carousel-item {
   -webkit-transform: translate3d(var(--move-right), 0, 0);
   transform: translate3d(var(--move-right), 0, 0);
 }
 
-.netflix-carousel-inner-container:hover .netflix-carousel-item {
+.carousel-inner-container:hover .carousel-item {
   opacity: 0.3;
 }
 
-.netflix-carousel-inner-container:hover .netflix-carousel-item:hover {
+.carousel-inner-container:hover .carousel-item:hover {
   -webkit-transform: scale(var(--grow-factor));
   transform: scale(var(--grow-factor));
   opacity: 1;
@@ -74,14 +74,14 @@
 
 /* =========================================================== */
 /* ITEM ELEMENTS */
-.netflix-carousel-item-img {
+.carousel-item-img {
   width: var(--item-width);
   height: var(--item-height);
   -o-object-fit: cover;
   object-fit: cover;
 }
 
-.netflix-carousel-item-title {
+.carousel-item-title {
   position: absolute;
   bottom: 0;
   padding: 10px;
@@ -94,7 +94,7 @@
 
 /* =========================================================== */
 /* ITEM DETAILS */
-.netflix-carousel-item-details {
+.carousel-item-details {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -108,7 +108,7 @@
   transition: var(--transition-time) opacity;
 }
 
-.netflix-carousel-item-details:after, .netflix-carousel-item-details:before {
+.carousel-item-details:after, .carousel-item-details:before {
   content: '';
   position: absolute;
   top: 50%;
@@ -116,6 +116,6 @@
   display: #000;
 }
 
-.netflix-carousel-item:hover .netflix-carousel-item-details {
+.carousel-item:hover .carousel-item-details {
   opacity: 1;
 }
