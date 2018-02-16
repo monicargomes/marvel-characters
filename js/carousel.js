@@ -1,8 +1,8 @@
 function loadItems(characters) {
 
   characters.forEach((character) => {
-    createItem(character.thumbnail.path+"/landscape_xlarge."+character.thumbnail.extension, character.name).click(() => {
-      $('.large-img').attr('src', character.thumbnail.path+"/detail."+character.thumbnail.extension);
+    createItem(character.thumbnail.path+"/landscape_incredible."+character.thumbnail.extension, character.name).click(() => {
+      $('.large-img').attr('src', character.thumbnail.path+"/landscape_incredible."+character.thumbnail.extension);
       $('.character-name').text(character.name);
       $('.character-description').text(character.description);
       $('html').animate({ scrollTop: 0 }, 'slow');

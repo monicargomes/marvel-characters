@@ -8,6 +8,8 @@
 body {
   background-color: var(--primary-color);
   color: var(--text-color);
+  font-family: Helvetica;
+  font-size: 16px;
 }
 
 main {
@@ -24,11 +26,6 @@ h2 {
   font-size: 1.5rem;
 }
 
-html, body {
-  font-family: Helvetica;
-  font-size: 16px;
-}
-
 footer {
   padding: 1rem 2rem;
   position: fixed;
@@ -36,4 +33,5 @@ footer {
   width: 100%;
   background-color: var(--primary-color);
   text-align: center;
+  opacity: 0.8;
 }

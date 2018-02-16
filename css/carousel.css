@@ -7,6 +7,10 @@
 	--move-left: calc(calc(var(--move-right) / 2) * -1);
 }
 
+.carousel-title {
+  padding: 2rem 0 0 0;
+}
+
 .icon-right, .icon-left {
 	cursor: pointer;
 	margin: auto;
@@ -33,7 +37,7 @@
   transition: var(--transition-time) transform, var(--transition-time) -webkit-transform;
   font-size: 0;
   white-space: nowrap;
-  margin: 40px 0;
+  margin: 50px 0;
 }
 
 .carousel-inner-container:hover {

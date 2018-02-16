@@ -1,9 +1,3 @@
-.main-title {
-  color: var(--text-color);
-  float: left;
-  margin: .5rem;
-}
-
 .toolbar {
   position: fixed;
   top: 0;
@@ -42,29 +36,27 @@
 }
 
 .featured-character {
-  width: 100%;
-  display: flex;
-  background-image: linear-gradient(to right, transparent, var(--primary-color) 40%);
+  width: 80%;
+margin: auto;
 
+
+}
+
+.featured-character-img {
+  width: 50%;
+  margin: auto;
 }
 
 .large-img {
-  width: 50%;
-  height: 100%;
-  z-index: -1;
+  width: 100%;
+
+
 }
 
-.featured-character-details {
-  width: 50%;
-  height: 100%;
-}
+
 
 .character-name, .character-description {
   padding: 1rem 1rem;
   line-height: 1.5;
   text-align: justify;
-}
-
-.carousel-title {
-  padding: 2rem 0 0 0;
 }

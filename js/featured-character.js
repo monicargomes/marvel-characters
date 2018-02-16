@@ -4,7 +4,7 @@ function readFeaturedCharacter(characters) {
 }
 
 function loadFeaturedCharacter(featuredCharacter) {
-    $('.large-img').attr('src', featuredCharacter.thumbnail.path+"/detail."+featuredCharacter.thumbnail.extension);
+    $('.large-img').attr('src', featuredCharacter.thumbnail.path+"/landscape_incredible."+featuredCharacter.thumbnail.extension);
     $('.character-name').text(featuredCharacter.name);
     $('.character-description').text(featuredCharacter.description);
 }
