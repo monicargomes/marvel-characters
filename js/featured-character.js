@@ -1,4 +1,4 @@
-function readFeaturedCharacter(characters) {
+function getRandomFeaturedCharacter(characters) {
   let index = Math.floor(Math.random() * characters.length);
   return characters[index]
 }

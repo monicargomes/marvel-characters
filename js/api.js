@@ -6,7 +6,7 @@ function getMarvelResponse(limit, offset) {
   let ts = new Date().getTime();
   let hash = CryptoJS.MD5(ts + PRIV_KEY + PUBLIC_KEY).toString();
   let url = "http://gateway.marvel.com/v1/public/characters?ts="+ts+"&apikey="+PUBLIC_KEY+"&hash="+hash;
-
+  let topCharactersId = ['1009220', '1009351', '1009368', '1009189', '1009664', '1009610', '1009718', '1009262', '1009215'];
 
   $.getJSON(url, {
     limit: limit,
@@ -18,17 +18,22 @@ function getMarvelResponse(limit, offset) {
       return !expr.test(character.thumbnail.path)
     });
 
-    loadFeaturedCharacter(readFeaturedCharacter(characters));
-    loadCarousel(characters, '#more-characters', '#more-icon-right', '#more-icon-left');
-
-    let topCharactersId = ['1009220', '1009351', '1009368', '1009189', '1009664', '1009610', '1009718', '1009262', '1009215']
+    loadFeaturedCharacter(getRandomFeaturedCharacter(characters));
+    loadCarousel(characters, '#more-inner-container');
+    animateScrollButtons('#more-outer-container', '#more-icon-right', '#more-icon-left');
 
     topCharactersId.forEach((topCharacterId) =>{
-      $.getJSON("http://gateway.marvel.com/v1/public/characters/"+topCharacterId+"?ts="+ts+"&apikey="+PUBLIC_KEY+"&hash="+hash)
+      url = "http://gateway.marvel.com/v1/public/characters/"+topCharacterId+"?ts="+ts+"&apikey="+PUBLIC_KEY+"&hash="+hash;
+
+      $.getJSON(url)
       .done((response) => {
         let topCharacter = response.data.results;
 
-        loadCarousel(topCharacter, '#top-characters', '#top-icon-right', '#top-icon-left');
+        loadCarousel(topCharacter, '#top-inner-container');
+        animateScrollButtons('#top-outer-container', '#top-icon-right', '#top-icon-left');
+
+        $('.spinner-icon').fadeOut();
+        $('.container').fadeIn('slow');
 
       })
       .fail((err) => {

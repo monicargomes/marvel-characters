@@ -1,4 +1,4 @@
-function loadCarousel(items, container, iconRight, iconLeft) {
+function loadCarousel(items, container) {
 
   items.forEach((item) => {
     let image = item.thumbnail.path+"/landscape_amazing."+item.thumbnail.extension;
@@ -11,17 +11,6 @@ function loadCarousel(items, container, iconRight, iconLeft) {
 
   });
 
-  $(iconRight).click(() => {
-    $('.carousel-outer-container').animate({
-      scrollLeft: "+=400px"
-    }, "slow");
-  });
-
-  $(iconLeft).click(() => {
-    $('.carousel-outer-container').animate({
-      scrollLeft: "-=400px"
-    }, "slow");
-  });
 }
 
 function createItem(image, text){
@@ -32,4 +21,18 @@ function createItem(image, text){
   let itemTitle = $('<div>').addClass('carousel-item-title').text(text).appendTo(itemDetails);
 
   return item;
+}
+
+function animateScrollButtons(container, iconRight, iconLeft) {
+  $(iconRight).click(() => {
+    $(container).stop().animate({
+      scrollLeft: "+=400px"
+    }, "slow");
+  });
+
+  $(iconLeft).click(() => {
+    $(container).stop().animate({
+      scrollLeft: "-=400px"
+    }, "slow");
+  });
 }

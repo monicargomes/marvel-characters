@@ -14,8 +14,7 @@ body {
 
 main {
   width: 80%;
-  margin: auto;
-  padding: 6rem 0 5rem 0;
+  margin: 6rem auto;
 }
 
 a {
@@ -88,6 +87,15 @@ footer {
   font-size: 2.2rem;
 }
 
+.spinner-icon {
+  width: 10%;
+  margin: 0 45%;
+}
+
+.container {
+  display: none;
+}
+
 .featured-character {
   width: 70%;
   margin: auto;
@@ -100,7 +108,7 @@ footer {
 .large-img {
   height: 150px;
   border-radius: 50%;
-  box-shadow: 0 0 3rem var(----primary-dark-color));
+  box-shadow: 0 0 3rem var(--primary-dark-color));
 }
 
 .featured-character-details {
@@ -110,7 +118,7 @@ footer {
 }
 
 .character-name {
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid var(--accent-color);
   margin: .5rem 0;
   padding: .5rem 0;
 }
