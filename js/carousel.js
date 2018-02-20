@@ -1,33 +1,35 @@
-function loadItems(characters) {
+function loadCarousel(items, container, iconRight, iconLeft) {
 
-  characters.forEach((character) => {
-    createItem(character.thumbnail.path+"/landscape_incredible."+character.thumbnail.extension, character.name).click(() => {
-      $('.large-img').attr('src', character.thumbnail.path+"/landscape_incredible."+character.thumbnail.extension);
-      $('.character-name').text(character.name);
-      $('.character-description').text(character.description);
+  items.forEach((item) => {
+    let image = item.thumbnail.path+"/landscape_amazing."+item.thumbnail.extension;
+    let text = item.name;
+
+    createItem(image, text).appendTo($(container)).click(() => {
+      loadFeaturedCharacter(item);
       $('html').animate({ scrollTop: 0 }, 'slow');
     });
+
+  });
+
+  $(iconRight).click(() => {
+    $('.carousel-outer-container').animate({
+      scrollLeft: "+=400px"
+    }, "slow");
+  });
+
+  $(iconLeft).click(() => {
+    $('.carousel-outer-container').animate({
+      scrollLeft: "-=400px"
+    }, "slow");
   });
 }
 
 function createItem(image, text){
-  var item = $('<div>').addClass('carousel-item');
-  var itemImgContainer = $('<div>').addClass('carousel-item-img-container').appendTo(item);
-  var itemImg = $('<img>').addClass('carousel-item-img').attr('src', image).appendTo(itemImgContainer);
-  var itemDetails = $('<div>').addClass('carousel-item-details').appendTo(item);
-  var itemTitle = $('<div>').addClass('carousel-item-title').text(text).appendTo(itemDetails);
+  let item = $('<div>').addClass('carousel-item');
+  let itemImgContainer = $('<div>').addClass('carousel-item-img-container').appendTo(item);
+  let itemImg = $('<img>').addClass('carousel-item-img').attr('src', image).appendTo(itemImgContainer);
+  let itemDetails = $('<div>').addClass('carousel-item-details').appendTo(item);
+  let itemTitle = $('<div>').addClass('carousel-item-title').text(text).appendTo(itemDetails);
 
-  return item.appendTo($('.carousel-inner-container'));
+  return item;
 }
-
-$('.icon-right').click(() => {
-      $('.carousel-outer-container').animate({
-        scrollLeft: "+=400px"
-      }, "slow");
-   });
-
- $('.icon-left').click(() => {
-      $('.carousel-outer-container').animate({
-        scrollLeft: "-=400px"
-      }, "slow");
- });

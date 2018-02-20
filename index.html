@@ -6,7 +6,7 @@
   <title>Marvel Characters</title>
   <link rel="stylesheet" href="css/reset.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/carousel.css">
 
@@ -23,18 +23,37 @@
     <div class="featured-character">
       <div class="featured-character-img">
         <img alt="Featured Character" class="large-img">
-      </div>
-      <h2 class="character-name"></h2>
-      <p class="character-description"></p>
-    </div>
-    <h2 class="carousel-title">Characters</h2>
-    <div class="carousel">
-      <i class="large material-icons icon-left">chevron_left</i>
-      <div class="carousel-outer-container">
-        <div class="carousel-inner-container">
+        <div class="featured-character-details">
+          <h1 class="character-name"></h1>
+          <div class="character-links">
+          </div>
         </div>
       </div>
-      <i class="large material-icons icon-right">chevron_right</i>
+      <div class="character-details">
+        <h2>Description</h2>
+        <p class="character-description"></p>
+        <h2>Comics</h2>
+        <ul class="character-comics">
+        </ul>
+      </div>
+    </div>
+    <h2 class="carousel-title">Top Characters</h2>
+    <div class="carousel">
+      <i class="large material-icons icon-left" id="top-icon-left">chevron_left</i>
+      <div class="carousel-outer-container">
+        <div class="carousel-inner-container" id="top-characters">
+        </div>
+      </div>
+      <i class="large material-icons icon-right" id="top-icon-right">chevron_right</i>
+    </div>
+    <h2 class="carousel-title">More Characters</h2>
+    <div class="carousel">
+      <i class="large material-icons icon-left" id="more-icon-left">chevron_left</i>
+      <div class="carousel-outer-container">
+        <div class="carousel-inner-container" id="more-characters">
+        </div>
+      </div>
+      <i class="large material-icons icon-right" id="more-icon-right">chevron_right</i>
     </div>
   </main>
   <footer>
