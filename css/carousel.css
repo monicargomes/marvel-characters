@@ -60,6 +60,7 @@
   transition: var(--transition-time) all;
   -webkit-transform-origin: center left;
   transform-origin: center left;
+	z-index: -1;
 }
 
 .carousel-item:hover ~ .carousel-item {

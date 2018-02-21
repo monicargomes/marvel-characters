@@ -21,7 +21,7 @@ a {
   text-decoration: none;
   color: var(--text-color);
   padding-right: 1ch;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 a:hover {

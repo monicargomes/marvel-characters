@@ -1,13 +1,13 @@
-function loadCarousel(items, container) {
+function loadCarousel(items, carousel) {
 
   items.forEach((item) => {
     let image = item.thumbnail.path+"/landscape_amazing."+item.thumbnail.extension;
     let text = item.name;
 
-    createItem(image, text).appendTo($(container)).click(() => {
+    createItem(image, text).click(() => {
       loadFeaturedCharacter(item);
       $('html').animate({ scrollTop: 0 }, 'slow');
-    });
+    }).appendTo(carousel);
 
   });
 
@@ -23,7 +23,7 @@ function createItem(image, text){
   return item;
 }
 
-function animateScrollButtons(container, iconRight, iconLeft) {
+function animateScrollIcons(container, iconRight, iconLeft) {
   $(iconRight).click(() => {
     $(container).stop().animate({
       scrollLeft: "+=400px"
@@ -35,4 +35,17 @@ function animateScrollButtons(container, iconRight, iconLeft) {
       scrollLeft: "-=400px"
     }, "slow");
   });
+}
+
+function createCarousel(title){
+  let carouselTitle = $('<h2>').addClass('carousel-title').text(title).appendTo('.container');
+  let carousel = $('<div>').addClass('carousel').appendTo('.container');
+  let iconLeft = $('<i>').addClass('large material-icons icon-left').text('chevron_left').prependTo(carousel);
+  let outerContainer = $('<div>').addClass('carousel-outer-container').appendTo(carousel);
+  let innerContainer = $('<div>').addClass('carousel-inner-container').appendTo(outerContainer);
+  let iconRight = $('<i>').addClass('large material-icons icon-right').text('chevron_right').appendTo(carousel);
+
+  animateScrollIcons(outerContainer, iconRight, iconLeft);
+
+  return innerContainer;
 }
