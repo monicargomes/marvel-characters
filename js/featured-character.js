@@ -31,18 +31,28 @@ function listComics(comics) {
   }
 
   comics.forEach((comic) =>{
-    let title = comic.name;
-    $('<li>').text(title).appendTo('.character-comics')
+    let url = comic.resourceURI;
+
+    $.getJSON(url+getUrl())
+    .done((response) => {
+      let item = response.data.results[0];
+      let image = item.thumbnail.path+'.'+item.thumbnail.extension;
+
+      $('<img>').attr('src', image).addClass('character-comic-img').appendTo($('<li>')).appendTo('.character-comics');
+    })
+    .fail((err) => {
+      console.log(err);
+    });
   })
 
 }
 
-function listLinks(urls) {
+function listLinks(links) {
 
-  urls.forEach((url) =>{
-    let title = url.type;
-    let path = url.url;
-    $('<a>').text(title).attr('href', path).appendTo('.character-links')
+  links.forEach((link) =>{
+    let title = link.type;
+    let path = link.url;
+    $('<a>').text(title).attr('href', path).appendTo($('<li>')).appendTo('.character-links')
   })
 
 }

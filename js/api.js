@@ -10,6 +10,8 @@ function getUrl() {
 };
 
 function getMarvelCharacters(limit, offset){
+  let moreCharactersCarousel = createCarousel('More Characters');
+
   $.getJSON('http://gateway.marvel.com/v1/public/characters'+ getUrl(), {
     limit: limit,
     offset: offset
@@ -22,26 +24,8 @@ function getMarvelCharacters(limit, offset){
 
     console.log(characters);
 
-    let topCharactersCarousel = createCarousel('Top Characters');
-    let moreCharactersCarousel = createCarousel('More Characters');
-
     loadFeaturedCharacter(getRandomFeaturedCharacter(characters));
     loadCarousel(characters, moreCharactersCarousel);
-
-    let topCharactersId = ['1009220', '1009351', '1009368', '1009189', '1009664', '1009610', '1009718', '1009262', '1009215'];
-
-    topCharactersId.forEach((topCharacterId) =>{
-
-      $.getJSON('http://gateway.marvel.com/v1/public/characters/'+topCharacterId+getUrl())
-      .done((response) => {
-        let topCharacter = response.data.results;
-
-        loadCarousel(topCharacter, topCharactersCarousel);
-      })
-      .fail((err) => {
-        console.log(err);
-      });
-    })
 
     $('.spinner-icon').fadeOut();
     $('.container').fadeIn('slow');
@@ -51,4 +35,23 @@ function getMarvelCharacters(limit, offset){
   })
 }
 
-getMarvelCharacters(50, 0);
+function getMarvelTopCharacters(){
+  let topCharactersCarousel = createCarousel('Top Characters');
+  let topCharactersId = ['1009220', '1009351', '1009368', '1009189', '1009664', '1009610', '1009718', '1009262', '1009215'];
+
+  topCharactersId.forEach((topCharacterId) =>{
+
+    $.getJSON('http://gateway.marvel.com/v1/public/characters/'+topCharacterId+getUrl())
+    .done((response) => {
+      let topCharacter = response.data.results;
+
+      loadCarousel(topCharacter, topCharactersCarousel);
+    })
+    .fail((err) => {
+      console.log(err);
+    });
+  })
+}
+
+getMarvelTopCharacters();
+getMarvelCharacters(10, 0);

@@ -127,3 +127,9 @@ footer {
   line-height: 1.5;
   text-align: justify;
 }
+
+.character-comic-img{
+  width: 100px;
+  height: 200px;
+  margin: .5rem .5rem;
+}
