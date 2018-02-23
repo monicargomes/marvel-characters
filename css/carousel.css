@@ -8,7 +8,7 @@
 }
 
 .carousel-title {
-  padding: 2rem 0 0 3rem;
+  padding: 0 0 0 3rem;
 }
 
 .icon-right, .icon-left {
@@ -31,18 +31,13 @@
 
 /* INNER */
 .carousel-inner-container {
-  -webkit-transition: var(--transition-time) -webkit-transform;
-  transition: var(--transition-time) -webkit-transform;
-  transition: var(--transition-time) transform;
-  transition: var(--transition-time) transform, var(--transition-time) -webkit-transform;
+  transition: var(--transition-time);
   font-size: 0;
   white-space: nowrap;
   margin: 50px 0;
-
 }
 
 .carousel-inner-container:hover {
-  -webkit-transform: translate3d(var(--move-left), 0, 0);
   transform: translate3d(var(--move-left), 0, 0);
 }
 
@@ -56,15 +51,12 @@
   margin-right: 10px;
   font-size: 20px;
   cursor: pointer;
-  -webkit-transition: var(--transition-time) all;
   transition: var(--transition-time) all;
-  -webkit-transform-origin: center left;
   transform-origin: center left;
 	z-index: -1;
 }
 
 .carousel-item:hover ~ .carousel-item {
-  -webkit-transform: translate3d(var(--move-right), 0, 0);
   transform: translate3d(var(--move-right), 0, 0);
 }
 
@@ -73,7 +65,6 @@
 }
 
 .carousel-inner-container:hover .carousel-item:hover {
-  -webkit-transform: scale(var(--grow-factor));
   transform: scale(var(--grow-factor));
   opacity: 1;
 }
@@ -83,7 +74,6 @@
 .carousel-item-img {
   width: var(--item-width);
   height: var(--item-height);
-  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -91,8 +81,8 @@
   position: absolute;
   bottom: 0;
   padding: 10px;
-  color: #ecf0f1;
-  font-family: 'Open Sans', sans-serif;
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   line-height: 1.25vw;
   font-size: 1.4em;
@@ -108,10 +98,8 @@
   top: 0;
   font-size: 10px;
   opacity: 0;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0)));
   background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
-  -webkit-transition: var(--transition-time) opacity;
-  transition: var(--transition-time) opacity;
+  transition: var(--transition-time);
 }
 
 .carousel-item-details:after, .carousel-item-details:before {

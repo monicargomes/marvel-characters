@@ -24,14 +24,14 @@ function createItem(image, text){
 }
 
 function animateScrollIcons(container, iconRight, iconLeft) {
-  $(iconRight).click(() => {
-    $(container).stop().animate({
+  iconRight.click(() => {
+    container.stop().animate({
       scrollLeft: "+=400px"
     }, "slow");
   });
 
-  $(iconLeft).click(() => {
-    $(container).stop().animate({
+  iconLeft.click(() => {
+    container.stop().animate({
       scrollLeft: "-=400px"
     }, "slow");
   });
@@ -46,6 +46,24 @@ function createCarousel(title){
   let iconRight = $('<i>').addClass('large material-icons icon-right').text('chevron_right').appendTo(carousel);
 
   animateScrollIcons(outerContainer, iconRight, iconLeft);
+  loadMoreItems(outerContainer);
 
   return innerContainer;
+}
+
+function loadMoreItems(container){
+  container.scroll(() => {
+    var width = container.outerWidth()
+    var scrollWidth = container[0].scrollWidth;
+    var scrollLeft = container.scrollLeft();
+
+    if (scrollWidth - width === scrollLeft) {
+      offset = offset + 10;
+      getMarvelCharacters(limit, offset);
+    }
+    if (scrollLeft === 0) {
+      console.log('left end');
+    }
+  })
+
 }

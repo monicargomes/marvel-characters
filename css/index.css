@@ -20,12 +20,15 @@ main {
 a {
   text-decoration: none;
   color: var(--text-color);
-  padding-right: 1ch;
-  text-transform: capitalize;
+  font-weight: bolder;
+  padding: 0 1ch;
+  margin-right: 1ch;
+  text-transform: uppercase;
+  background-color: var(--accent-color);
 }
 
 a:hover {
-  text-shadow: 2px 2px var(--accent-color);
+  box-shadow: 4px 4px var(--primary-dark-color);
 }
 
 h1 {
@@ -88,8 +91,8 @@ footer {
 }
 
 .spinner-icon {
-  width: 10%;
-  margin: 0 45%;
+  width: 5%;
+  margin: 0 47.5%;
 }
 
 .container {
@@ -130,6 +133,6 @@ footer {
 
 .character-comic-img{
   width: 100px;
-  height: 200px;
+  height: 150px;
   margin: .5rem .5rem;
 }
