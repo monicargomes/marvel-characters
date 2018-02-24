@@ -1,53 +1,40 @@
-function loadFeaturedCharacter(featuredCharacter) {
-  let image = featuredCharacter.thumbnail.path+"/standard_fantastic."+featuredCharacter.thumbnail.extension;
-  let name = featuredCharacter.name;
-  let description = featuredCharacter.description;
-  let comics = featuredCharacter.comics.items;
-  let links = featuredCharacter.urls;
+const DEFAULT_DESCRIPTION = 'Sorry, there is no description for this character.'
+const EMPTY_COMICS = 'Sorry, there is no list of comics for this character.'
 
-  if (description == '') {
-    description = 'Sorry, there is no description for this character.'
-  }
+function loadFeaturedCharacter(character) {
+  let description = character.description ? character.description : DEFAULT_DESCRIPTION
+  $('.large-img').attr('src', getCharacterImageURL(character))
+  $('.character-name').text(character.name)
+  $('.character-description').text(description)
+  listComics(character.comics.items)
+  listLinks(character.urls)
+}
 
-  $('.large-img').attr('src', image);
-  $('.character-name').text(name);
-  $('.character-description').text(description);
-  $('.character-comics').empty();
-  $('.character-links').empty();
-
-  listComics(comics);
-  listLinks(links);
+function getCharacterImageURL(character) {
+  return character.thumbnail.path + "/standard_fantastic." + character.thumbnail.extension
 }
 
 function listComics(comics) {
+  $('.character-comics').empty()
 
   if (comics.length == 0) {
-    return $('<li>').text('Sorry, there is no list of comics for this character.').appendTo('.character-comics')
+    return $('<li>').text(EMPTY_COMICS).appendTo('.character-comics')
   }
 
-  comics.forEach((comic) =>{
-    let url = comic.resourceURI;
-
-    $.getJSON(url+'?'+getHash())
-    .done((response) => {
-      let item = response.data.results[0];
-      let image = item.thumbnail.path+'.'+item.thumbnail.extension;
-
-      $('<img>').attr('src', image).addClass('character-comic-img').appendTo($('<li>')).appendTo('.character-comics');
-    })
-    .fail((err) => {
-      console.log(err);
-    });
+  comics.forEach(comic => {
+    listComicsImage(comic, comicDetails => loadComic(comicDetails.item, comicDetails.image))
   })
+}
 
+function loadComic(item, image) {
+  $('<img>').attr('src', image).addClass('character-comic-img').appendTo($('<li>')).appendTo('.character-comics')
 }
 
 function listLinks(links) {
+  $('.character-links').empty()
+  links.forEach(link => loadLink(link.type, link.url))
+}
 
-  links.forEach((link) =>{
-    let title = link.type;
-    let path = link.url;
-    $('<a>').text(title).attr('href', path).appendTo($('<li>')).appendTo('.character-links')
-  })
-
+function loadLink(type, url) {
+  $('<a>').text(type).attr('href', url).appendTo($('<li>')).appendTo('.character-links')
 }

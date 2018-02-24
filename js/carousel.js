@@ -32,6 +32,8 @@ function addInfiniteScroll(outerContainer, innerContainer, loadMoreItems) {
     var scrollLeft = outerContainer.scrollLeft();
 
     if (scrollWidth - width < scrollLeft) {
+      // TODO: check if we can grab the items from the function below
+      // and call the loadCarousel form here
       loadMoreItems()
     }
   })

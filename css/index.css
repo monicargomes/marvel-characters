@@ -76,6 +76,7 @@ footer {
   border: 2px solid var(--text-color);
   color: var(--text-color);
   font-size: 1rem;
+  display: none;
 }
 
 .search {
@@ -117,7 +118,7 @@ footer {
 .large-img {
   height: 150px;
   border-radius: 50%;
-  box-shadow: 0 0 3rem var(--primary-dark-color));
+  box-shadow: 0 0 3rem var(--primary-dark-color);
 }
 
 .featured-character-details {

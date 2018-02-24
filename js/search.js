@@ -1,35 +1,46 @@
-$('.search-input').hide();
+const SEARCH_INPUT = $('.search-input')
+const ENTER_KEY_CODE = 13
 
-$('.icon-search').click(() => {
-  $('.search-input').fadeToggle().focus();
-});
+addSearchIconListener()
+addSearchListener()
 
-$('.search-input').keypress((event) => {
-  if(event.which == 13){
-    var name = $('.search-input').val().trim();
+function addSearchIconListener() {
+  $('.icon-search').click(_ => SEARCH_INPUT.fadeToggle().focus())
+}
 
-    $('.search-input').val('');
-    $('.spinner-icon').fadeIn();
-    $('.featured-character').fadeOut();
+function addSearchListener() {
+  SEARCH_INPUT.keypress((event) => {
+    if (event.which == ENTER_KEY_CODE) {
+      var name = SEARCH_INPUT.val().trim()
+      SEARCH_INPUT.val('')
+      showLoading()
+      readCharacterByName(name, character => {
+        if (!character) {
+          showError(name)
+          return
+        }
+        loadFeaturedCharacter(character)
+        hideLoading()
+      })
+    }
+  })
 
-    $.getJSON('http://gateway.marvel.com/v1/public/characters?name='+name+'&'+getUrl())
-    .done((response) => {
-      let character = response.data.results[0];
+}
 
-      if (character) {
-        loadFeaturedCharacter(character);
-        $('.spinner-icon').fadeOut();
-        $('.featured-character').fadeIn();
-        $('.error').hide();
-      } else {
-        $('.spinner-icon').fadeOut();
-        $('.error').text('Sorry, '+name+' not found!').show();
-      }
+function showError(name) {
+  $('.error').text('Sorry, ' + name + ' not found!').fadeIn()
+  $('.spinner-icon').fadeOut()
+  //$('.featured-character').fadeOut()
+}
 
-    })
-    .fail((err) => {
-      console.log(err);
-    });
-  }
+function showLoading() {
+  $('.spinner-icon').fadeIn()
+  //$('.featured-character').fadeOut()
+  $('.error').fadeOut()
+}
 
-})
+function hideLoading() {
+  $('.featured-character').fadeIn()
+  $('.spinner-icon').fadeOut()
+  $('.error').fadeOut()
+}

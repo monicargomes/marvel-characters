@@ -8,7 +8,7 @@ loadCharactersCarousel()
 function loadCharactersCarousel(offset) {
   listCharacters(offset, (characters) => {
     characterCarousel = createCarousel('More Characters', filterCharacterWithoutImages(characters), loadMoreItems)
-    hideLoadingSpinner()
+    hideLoading()
   })
 }
 
@@ -21,7 +21,7 @@ function loadTopCharactersCarousel() {
   listTopCharacters(characters => createCarousel('Top Characters', characters))
 }
 
-function hideLoadingSpinner() {
+function hideLoading() {
   $('.spinner-icon').fadeOut()
   $('.container').fadeIn('slow')
 }
