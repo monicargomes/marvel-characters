@@ -1,11 +1,18 @@
-function createCarousel(title, items, loadMoreItems) {
+function createCarousel(title, items, type, loadMoreItems) {
   let carouselTitle = $('<h2>').addClass('carousel-title').text(title).appendTo('.container');
   let carousel = $('<div>').addClass('carousel').appendTo('.container');
   let iconLeft = $('<i>').addClass('large material-icons icon-left').text('chevron_left').prependTo(carousel);
   let outerContainer = $('<div>').addClass('carousel-outer-container').appendTo(carousel);
   let innerContainer = $('<div>').addClass('carousel-inner-container').appendTo(outerContainer);
   let iconRight = $('<i>').addClass('large material-icons icon-right').text('chevron_right').appendTo(carousel);
-  loadCarousel(items, innerContainer)
+
+  if (type == 'big') {
+    carousel.addClass('carousel-big-items')
+  } else {
+    carousel.addClass('carousel-default-items')
+  }
+
+  loadCarousel(items, innerContainer, type)
   animateScrollIcons(outerContainer, iconRight, iconLeft);
   addInfiniteScroll(outerContainer, innerContainer, loadMoreItems);
   return innerContainer;
@@ -39,9 +46,9 @@ function addInfiniteScroll(outerContainer, innerContainer, loadMoreItems) {
   })
 }
 
-function loadCarousel(items, carousel) {
+function loadCarousel(items, carousel, type) {
   items.forEach((item) => {
-    let image = assemblyCharacterURL(item);
+    let image = assemblyCharacterURL(item, type);
     let text = item.name;
 
     createItem(image, text).click(() => {
@@ -51,8 +58,12 @@ function loadCarousel(items, carousel) {
   });
 }
 
-function assemblyCharacterURL(character) {
-  return character.thumbnail.path + "/landscape_amazing." + character.thumbnail.extension
+function assemblyCharacterURL(character, type) {
+  if (type && type === 'big') {
+    return character.thumbnail.path + "/portrait_uncanny." + character.thumbnail.extension
+  } else {
+    return character.thumbnail.path + "/landscape_medium." + character.thumbnail.extension
+  }
 }
 
 function createItem(image, text) {

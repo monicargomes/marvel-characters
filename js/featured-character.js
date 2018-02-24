@@ -36,5 +36,5 @@ function listLinks(links) {
 }
 
 function loadLink(type, url) {
-  $('<a>').text(type).attr('href', url).appendTo($('<li>')).appendTo('.character-links')
+  $('<li>').append($('<a>').text(type).attr('href', url)).appendTo('.character-links')
 }

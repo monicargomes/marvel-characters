@@ -5,7 +5,13 @@ addSearchIconListener()
 addSearchListener()
 
 function addSearchIconListener() {
-  $('.icon-search').click(_ => SEARCH_INPUT.fadeToggle().focus())
+  $('.icon-search').click(_ => {
+    if (SEARCH_INPUT.is(':visible')) {
+      SEARCH_INPUT.hide(250)
+    } else {
+      SEARCH_INPUT.show(250).focus()
+    }
+  })
 }
 
 function addSearchListener() {
@@ -24,7 +30,6 @@ function addSearchListener() {
       })
     }
   })
-
 }
 
 function showError(name) {

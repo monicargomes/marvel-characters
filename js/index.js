@@ -7,7 +7,7 @@ loadCharactersCarousel()
 
 function loadCharactersCarousel(offset) {
   listCharacters(offset, (characters) => {
-    characterCarousel = createCarousel('More Characters', filterCharacterWithoutImages(characters), loadMoreItems)
+    createCarousel('More Characters', filterCharacterWithoutImages(characters), 'default', loadMoreItems)
     hideLoading()
   })
 }
@@ -18,7 +18,7 @@ function loadMoreItems() {
 }
 
 function loadTopCharactersCarousel() {
-  listTopCharacters(characters => createCarousel('Top Characters', characters))
+  listTopCharacters(characters => createCarousel('Top Characters', characters, 'big'))
 }
 
 function hideLoading() {
