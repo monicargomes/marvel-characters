@@ -1,8 +1,3 @@
-function getRandomFeaturedCharacter(characters) {
-  let index = Math.floor(Math.random() * characters.length);
-  return characters[index]
-}
-
 function loadFeaturedCharacter(featuredCharacter) {
   let image = featuredCharacter.thumbnail.path+"/standard_fantastic."+featuredCharacter.thumbnail.extension;
   let name = featuredCharacter.name;
@@ -33,7 +28,7 @@ function listComics(comics) {
   comics.forEach((comic) =>{
     let url = comic.resourceURI;
 
-    $.getJSON(url+'?'+getUrl())
+    $.getJSON(url+'?'+getHash())
     .done((response) => {
       let item = response.data.results[0];
       let image = item.thumbnail.path+'.'+item.thumbnail.extension;

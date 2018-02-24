@@ -1,53 +1,58 @@
+const MAX_RESULTS = 10
+const PRIVATE_KEY = "f3dc6bee5afbcf48676136a33cda37a43f7c9d7e"
+const PUBLIC_KEY = "ff0a364af171967c9afa65f48246de25"
+const API_BASE_URL = 'http://gateway.marvel.com/v1/public/'
+const TOP_CHARACTERS_IDS = ['1009220', '1009351', '1009368', '1009189', '1009664', '1009610', '1009718', '1009262', '1009215']
 
-let offset = 0;
-let limit = 10;
+function readCharacter(id, callback) {
+  $.getJSON(getReadCharactersURL(id))
+    .done(response => callback(response.data.results[0]))
+    .fail(error => processRequestError(error))
+}
 
-getMarvelTopCharacters();
-getMarvelCharacters(limit, offset);
+function getReadCharactersURL(id) {
+  return API_BASE_URL + 'characters/' + id + '?' + getHash()
+}
 
-function getMarvelCharacters(limit, offset){
-
-  $.getJSON('http://gateway.marvel.com/v1/public/characters?'+ getUrl(), {
-    limit: limit,
+function listCharacters(offset, callback) {
+  $.getJSON(getListCharactersURL(), {
+    limit: MAX_RESULTS,
     offset: offset
-  })
-  .done((response) => {
-    let characters = response.data.results.filter((character) =>{
-      let expr = /image_not_available/;
-      return !expr.test(character.thumbnail.path)
-    });
+  }).done(response => callback(response.data.results))
+    .fail(error => processRequestError(error))
+}
 
-    console.log(characters);
+function getListCharactersURL() {
+  return API_BASE_URL + 'characters?' + getHash()
+}
 
-    if (offset == 0) {
-      var moreCharactersCarousel = createCarousel('More Characters');
-      loadFeaturedCharacter(getRandomFeaturedCharacter(characters));
-      $('.spinner-icon').fadeOut();
-      $('.container').fadeIn('slow');
-    }
-
-    loadCarousel(characters, moreCharactersCarousel);
-
-  })
-  .fail((err) => {
-    console.log(err);
+function listTopCharacters(callback) {
+  let characters = []
+  TOP_CHARACTERS_IDS.forEach((id) => {
+    readCharacter(id, (character) => {
+      characters.push(character)
+      // We call the callback only when all top chars finished reading
+      if (characters.length == TOP_CHARACTERS_IDS.length) {
+        callback(characters)
+      }
+    })
   })
 }
 
-function getMarvelTopCharacters(){
-  let topCharactersCarousel = createCarousel('Top Characters');
-  let topCharactersId = ['1009220', '1009351', '1009368', '1009189', '1009664', '1009610', '1009718', '1009262', '1009215'];
-
-  topCharactersId.forEach((topCharacterId) =>{
-
-    $.getJSON('http://gateway.marvel.com/v1/public/characters/'+topCharacterId+'?'+getUrl())
-    .done((response) => {
-      let topCharacter = response.data.results;
-
-      loadCarousel(topCharacter, topCharactersCarousel);
-    })
-    .fail((err) => {
-      console.log(err);
-    });
+function readRandomCharacter(callback) {
+  let offset = Math.floor(Math.random() * 1000)
+  listCharacters(offset, (characters) => {
+    let index = Math.floor(Math.random() * characters.length)
+    callback(characters[index])
   })
+}
+
+function processRequestError(error) {
+  console.log(error)
+}
+
+function getHash() {
+  let timestamp = new Date().getTime()
+  let md5 = CryptoJS.MD5(timestamp + PRIVATE_KEY + PUBLIC_KEY).toString()
+  return "ts=" + timestamp + "&apikey=" + PUBLIC_KEY + "&hash=" + md5
 }
