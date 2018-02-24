@@ -33,7 +33,7 @@ function listComics(comics) {
   comics.forEach((comic) =>{
     let url = comic.resourceURI;
 
-    $.getJSON(url+getUrl())
+    $.getJSON(url+'?'+getUrl())
     .done((response) => {
       let item = response.data.results[0];
       let image = item.thumbnail.path+'.'+item.thumbnail.extension;

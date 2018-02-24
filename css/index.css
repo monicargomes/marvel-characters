@@ -76,7 +76,6 @@ footer {
   border: 2px solid var(--text-color);
   color: var(--text-color);
   font-size: 1rem;
-
 }
 
 .search {
@@ -95,6 +94,12 @@ footer {
   margin: 0 47.5%;
 }
 
+.error {
+  text-align: center;
+  padding: 2rem 0;
+  display: none;
+}
+
 .container {
   display: none;
 }
@@ -102,6 +107,7 @@ footer {
 .featured-character {
   width: 70%;
   margin: auto;
+  padding-bottom: 1rem;
 }
 
 .featured-character-img {
