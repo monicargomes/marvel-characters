@@ -7,14 +7,15 @@ loadCharactersCarousel()
 
 function loadCharactersCarousel(offset) {
   listCharacters(offset, (characters) => {
-    createCarousel('More Characters', filterCharacterWithoutImages(characters), 'default', loadMoreItems)
+    characterCarousel = createCarousel('More Characters', filterCharacterWithoutImages(characters), 'default', loadMoreItems)
     hideLoading()
   })
 }
 
 function loadMoreItems() {
   offset += 10
-  listCharacters(offset, characters => loadCarousel(filterCharacterWithoutImages(characters), characterCarousel))
+  console.log('called');
+  listCharacters(offset, characters => loadCarousel(filterCharacterWithoutImages(characters), characterCarousel, 'default'))
 }
 
 function loadTopCharactersCarousel() {
@@ -32,4 +33,3 @@ function filterCharacterWithoutImages(characters) {
     return !expr.test(character.thumbnail.path)
   })
 }
-

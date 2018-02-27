@@ -5,6 +5,7 @@
   height: 2.5rem;
   background-color: var(--primary-dark-color);
   padding: 1rem 2rem;
+  z-index: +1;
 }
 
 .marvel-logo {
@@ -32,5 +33,5 @@
 .icon-search {
   cursor: pointer;
   vertical-align: middle;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
 }

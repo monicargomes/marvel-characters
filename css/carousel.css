@@ -1,5 +1,5 @@
 .carousel-big-items {
-	--transition-time: 500ms;
+	--transition-time: 300ms;
 	--item-width: 180px;
 	--item-height: 360px;
 	--grow-factor: 1.2;
@@ -8,7 +8,7 @@
 }
 
 .carousel-default-items {
-	--transition-time: 500ms;
+	--transition-time: 300ms;
 	--item-width: 250px;
 	--item-height: calc(var(--item-width) / (calc(16 / 9)));
 	--grow-factor: 1.2;

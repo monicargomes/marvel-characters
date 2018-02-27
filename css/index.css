@@ -1,6 +1,6 @@
 :root {
   --primary-dark-color: #000;
-  --primary-color: #141414; /*#424242;*/
+  --primary-color: #141414;
   --accent-color: #E50914;
   --text-color: white;
 }
@@ -8,12 +8,12 @@
 body {
   background-color: var(--primary-color);
   color: var(--text-color);
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 16px;
 }
 
 main {
-  width: 85%;
+  width: 80%;
   margin: 6rem auto;
 }
 
@@ -28,10 +28,6 @@ h2 {
   font-weight: bolder;
   margin-top: 1ch;
   color: var(--accent-color);
-}
-
-p {
-  font-weight: bolder;
 }
 
 footer {

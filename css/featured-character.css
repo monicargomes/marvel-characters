@@ -1,31 +1,29 @@
 .featured-character {
-  width: 100%;
+  width: 80%;
   margin: auto;
   padding-bottom: 1rem;
-  margin-left: 48px;
+
 }
 
-li {
+.character-links>li {
   margin-right: 1ch;
   display:inline-block;
   transform: skew(-20deg);
-  transition: background 0.2s;
+  transition: background 0.5s;
   background-color: var(--accent-color);
-  border: 1px solid white;
-  transition: color 300ms;
+  border: 1px solid var(--text-color);
 }
 
-li:hover {
+.character-links>li:hover {
   background-color: var(--text-color);
   border: 1px solid var(--accent-color);
-  trasition: 300ms;
 }
 
-li a:hover {
+.character-links>li a:hover {
   color: var(--accent-color);
 }
 
-li a {
+.character-links>li a {
   display:block;
   font-size: 1rem;
   padding: 0.25ch 1ch;
@@ -34,6 +32,7 @@ li a {
   text-decoration:none;
   font-weight: bolder;
   transform: skew(20deg);
+
 }
 
 .featured-character-img {
@@ -55,7 +54,7 @@ li a {
 .character-name {
   margin: .5rem 0;
   padding: .5rem 0;
-  color: white;
+  color: var(--accent-color);
 }
 
 .character-details {
@@ -63,12 +62,14 @@ li a {
   text-align: justify;
 }
 
+.character-comics{
+  height: 200px;
+  display: flex;
+  overflow: scroll;
+}
+
 .character-comic-img{
   width: 100px;
   height: 150px;
-  margin: .5rem .5rem;
-}
-
-.character-links {
-  margin-top: 1.2ch;
+  margin: auto 1rem auto 0;
 }
