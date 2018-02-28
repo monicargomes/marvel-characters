@@ -1,7 +1,7 @@
 const MAX_RESULTS = 10
 const PRIVATE_KEY = "f3dc6bee5afbcf48676136a33cda37a43f7c9d7e"
 const PUBLIC_KEY = "ff0a364af171967c9afa65f48246de25"
-const API_BASE_URL = 'http://gateway.marvel.com/v1/public/'
+const API_BASE_URL = 'https://gateway.marvel.com/v1/public/'
 const TOP_CHARACTERS_IDS = ['1009220', '1009351', '1009368', '1009189', '1009664', '1009610', '1009718', '1009262', '1009215']
 
 function readCharacter(id, callback) {
@@ -70,7 +70,11 @@ function listComicsImage(comic, callback) {
 }
 
 function readComicURL(comic) {
+<<<<<<< HEAD
   return comic.resourceURI + '?' + getHash();
+=======
+  return comic.resourceURI.replace("http", "https") + '?' + getHash()
+>>>>>>> 087a58a55b45fc5b1270c60ce684df3a386f2ed3
 }
 
 function processRequestError(error) {
