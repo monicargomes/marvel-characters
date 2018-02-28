@@ -69,11 +69,10 @@
 }
 
 .character-comics>li{
-  margin: auto;
+  margin: auto 1ch auto 0;
 }
 
 .character-comic-img{
   width: 100px;
   height: 150px;
-  margin-right: 1rem;
 }
