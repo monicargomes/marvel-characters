@@ -63,13 +63,17 @@
 }
 
 .character-comics{
-  height: 200px;
+  height: 150px;
   display: flex;
   overflow: scroll;
+}
+
+.character-comics>li{
+  margin: auto;
 }
 
 .character-comic-img{
   width: 100px;
   height: 150px;
-  margin: auto 1rem auto 0;
+  margin-right: 1rem;
 }

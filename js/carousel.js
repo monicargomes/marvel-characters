@@ -6,13 +6,13 @@ function createCarousel(title, items, type, loadMoreItems) {
   let innerContainer = $('<div>').addClass('carousel-inner-container').appendTo(outerContainer);
   let iconRight = $('<i>').addClass('large material-icons icon-right').text('chevron_right').appendTo(carousel);
 
-  if (type == 'big') {
-    carousel.addClass('carousel-big-items')
+  if (type === 'big') {
+    carousel.addClass('carousel-big-items');
   } else {
-    carousel.addClass('carousel-default-items')
+    carousel.addClass('carousel-default-items');
   }
 
-  loadCarousel(items, innerContainer, type)
+  loadCarousel(items, innerContainer, type);
   animateScrollIcons(outerContainer, iconRight, iconLeft);
   addInfiniteScroll(outerContainer, innerContainer, loadMoreItems);
   return innerContainer;
@@ -34,12 +34,12 @@ function animateScrollIcons(container, iconRight, iconLeft) {
 
 function addInfiniteScroll(outerContainer, innerContainer, loadMoreItems) {
   outerContainer.scroll(() => {
-    var width = outerContainer.outerWidth()
+    var width = outerContainer.outerWidth();
     var scrollWidth = outerContainer[0].scrollWidth;
     var scrollLeft = outerContainer.scrollLeft();
 
     if (scrollWidth - width <= scrollLeft) {
-      loadMoreItems()
+      loadMoreItems();
     }
   })
 }
@@ -59,9 +59,9 @@ function loadCarousel(items, carousel, type) {
 
 function assemblyCharacterURL(character, type) {
   if (type && type === 'big') {
-    return character.thumbnail.path + "/portrait_uncanny." + character.thumbnail.extension
+    return character.thumbnail.path + "/portrait_uncanny." + character.thumbnail.extension;
   } else {
-    return character.thumbnail.path + "/landscape_medium." + character.thumbnail.extension
+    return character.thumbnail.path + "/landscape_medium." + character.thumbnail.extension;
   }
 }
 

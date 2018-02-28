@@ -26,7 +26,7 @@ h1 {
 h2 {
   font-size: 1.5rem;
   font-weight: bolder;
-  margin-top: 1ch;
+  margin: 1ch 0;
   color: var(--accent-color);
 }
 

@@ -1,51 +1,46 @@
-const SEARCH_INPUT = $('.search-input')
-const ENTER_KEY_CODE = 13
 
-addSearchIconListener()
-addSearchListener()
+const SEARCH_INPUT = $('.search-input');
+const ENTER_KEY_CODE = 13;
+
+addSearchIconListener();
+addSearchListener();
 
 function addSearchIconListener() {
-  $('.icon-search').click(_ => {
-    if (SEARCH_INPUT.is(':visible')) {
-      SEARCH_INPUT.hide(250)
-    } else {
-      SEARCH_INPUT.show(250).focus()
-    }
-  })
+  $('.icon-search').click(() => SEARCH_INPUT.toggle(250).focus());
 }
 
 function addSearchListener() {
   SEARCH_INPUT.keypress((event) => {
-    if (event.which == ENTER_KEY_CODE) {
-      var name = SEARCH_INPUT.val().trim()
-      SEARCH_INPUT.val('')
-      showLoading()
+    if (event.which === ENTER_KEY_CODE) {
+      var name = SEARCH_INPUT.val().trim();
+      SEARCH_INPUT.val('');
+      showLoading();
       readCharacterByName(name, character => {
         if (!character) {
-          showError(name)
-          return
+          showError(name);
+          return;
         }
-        loadFeaturedCharacter(character)
-        hideLoading()
+        loadFeaturedCharacter(character);
+        hideLoading();
       })
     }
   })
 }
 
 function showError(name) {
-  $('.error').text('Sorry, ' + name + ' not found!').fadeIn()
-  $('.spinner-icon').fadeOut()
-  //$('.featured-character').fadeOut()
+  $('.error').text('Sorry, ' + name + ' not found!').fadeIn();
+  $('.spinner-icon').fadeOut();
+  $('.featured-character').fadeOut()
 }
 
 function showLoading() {
-  $('.spinner-icon').fadeIn()
-  //$('.featured-character').fadeOut()
-  $('.error').fadeOut()
+  $('.spinner-icon').fadeIn();
+  $('.featured-character').fadeOut()
+  $('.error').fadeOut();
 }
 
 function hideLoading() {
-  $('.featured-character').fadeIn()
-  $('.spinner-icon').fadeOut()
-  $('.error').fadeOut()
+  $('.featured-character').fadeIn();
+  $('.spinner-icon').fadeOut();
+  $('.error').fadeOut();
 }
