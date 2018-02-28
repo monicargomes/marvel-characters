@@ -70,11 +70,8 @@ function listComicsImage(comic, callback) {
 }
 
 function readComicURL(comic) {
-<<<<<<< HEAD
   return comic.resourceURI + '?' + getHash();
-=======
   return comic.resourceURI.replace("http", "https") + '?' + getHash()
->>>>>>> 087a58a55b45fc5b1270c60ce684df3a386f2ed3
 }
 
 function processRequestError(error) {
