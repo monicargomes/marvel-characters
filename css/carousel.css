@@ -119,13 +119,13 @@
   transition: var(--transition-time);
 }
 .carousel-big-items .carousel-item-details {
-  opacity: 1;
+  opacity: 0;
   font-size: .6em;
 }
 
 .carousel-big-items .carousel-item-title {
-  text-align: center;
   margin-bottom: 16px;
+	opacity: 1;
 }
 
 .carousel-item-details:after, .carousel-item-details:before {
