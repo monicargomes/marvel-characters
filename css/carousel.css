@@ -16,10 +16,6 @@
 	--move-left: -20px;
 }
 
-.carousel-title {
-  padding: 0 0 0 48px;
-}
-
 .icon-right, .icon-left {
 	cursor: pointer;
 	margin: auto;

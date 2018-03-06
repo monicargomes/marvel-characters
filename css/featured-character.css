@@ -1,5 +1,21 @@
+@media (min-width: 300px) {
+  .featured-character-img {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .featured-character {
+    width: 80%;
+  }
+  .featured-character-img {
+    display: flex;
+    text-align: left;
+  }
+}
+
 .featured-character {
-  width: 80%;
   margin: auto;
   padding-bottom: 1rem;
 
@@ -25,18 +41,12 @@
 
 .character-links>li a {
   display:block;
-  font-size: 1rem;
   padding: 0.25ch 1ch;
   color: var(--text-color);
   text-transform: uppercase;
   text-decoration:none;
   font-weight: bolder;
   transform: skew(20deg);
-
-}
-
-.featured-character-img {
-  display: flex;
 }
 
 .large-img {

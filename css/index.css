@@ -5,11 +5,28 @@
   --text-color: white;
 }
 
+@media (min-width: 300px){
+  body {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px){
+  body {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+}
+
 body {
   background-color: var(--primary-color);
   color: var(--text-color);
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
-  font-size: 16px;
 }
 
 main {
@@ -18,7 +35,6 @@ main {
 }
 
 h1 {
-  font-size: 3rem;
   font-weight: bolder;
   color: var(--accent-color);
 }
@@ -31,7 +47,7 @@ h2 {
 }
 
 footer {
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   position: fixed;
   bottom: 0;
   width: 100%;
