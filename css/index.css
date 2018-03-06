@@ -12,6 +12,10 @@
   h1 {
     font-size: 2rem;
   }
+  main {
+    width: 90%;
+    margin: 6rem auto;
+  }
 }
 
 @media (min-width: 1024px){
@@ -21,17 +25,16 @@
   h1 {
     font-size: 3rem;
   }
+  main {
+    width: 80%;
+    margin: 6rem auto;
+  }
 }
 
 body {
   background-color: var(--primary-color);
   color: var(--text-color);
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
-}
-
-main {
-  width: 80%;
-  margin: 6rem auto;
 }
 
 h1 {

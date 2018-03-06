@@ -16,6 +16,18 @@
 	--move-left: -20px;
 }
 
+@media (min-width: 300px) {
+	.icon-right, .icon-left {
+		display: none;
+	}
+}
+
+@media (min-width: 1024px) {
+	.icon-right, .icon-left {
+		display: block;
+	}
+}
+
 .icon-right, .icon-left {
 	cursor: pointer;
 	margin: auto;
