@@ -14,14 +14,15 @@ function getReadCharactersURL(id) {
   return API_BASE_URL + 'characters/' + id + '?' + getHash();
 }
 
-function readCharacterByName(name, callback) {
-  $.getJSON(getReadCharacterByNameURL(name))
-    .done(response => callback(response.data.results[0]))
-    .fail(error => processRequestError(error))
+function readCharacterByName(name, callback, processError) {
+  $.getJSON(getReadCharacterByNameURL(name), {
+    limit: MAX_RESULTS
+  }).done(response => callback(response.data.results))
+    .fail(error => processError(error))
 }
 
 function getReadCharacterByNameURL(name) {
-  return API_BASE_URL + 'characters?name=' + name + '&' + getHash();
+  return API_BASE_URL + 'characters?nameStartsWith=' + name + '&' + getHash();
 }
 
 function listCharacters(offset, callback) {

@@ -1,6 +1,8 @@
 let characterCarousel;
 let offset = 0;
 
+addSearchIconListener();
+addSearchListener();
 readRandomCharacter(random => loadFeaturedCharacter(random));
 loadTopCharactersCarousel();
 loadCharactersCarousel();
@@ -8,7 +10,6 @@ loadCharactersCarousel();
 function loadCharactersCarousel(offset) {
   listCharacters(offset, characters => {
     characterCarousel = createCarousel('More Characters', filterCharacterWithoutImages(characters), 'default', loadMoreItems);
-    $('.spinner-icon').fadeOut();
     $('.container').fadeIn('slow');
   })
 }
