@@ -16,6 +16,7 @@ function addSearchListener() {
       characters.forEach(character => createDropdownItem(character));
     }, error => {
       $('.search-dropdown>li').remove();
+      $('.search-dropdown').hide();
     })
   })
 

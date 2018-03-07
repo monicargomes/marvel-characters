@@ -16,6 +16,7 @@
     left: 0;
     right: 0;
     top: 4.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -38,6 +39,7 @@
     position: absolute;
     right: 5rem;
     top: 4.5rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -80,7 +82,11 @@
   border-radius: 10px;
   cursor: pointer;
   display: none;
-  line-height: 1.5rem;
+}
+
+.search-dropdown li:hover {
+  text-shadow: 2px 2px 2px var(--accent-color);
+  font-weight: bolder;
 }
 
 .loading-icon {
