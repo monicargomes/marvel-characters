@@ -1,11 +1,11 @@
-@media (max-width: 700px) {
+@media (max-width: 767px) {
 	.carousel-big-items {
 		--item-width: 100px;
 		--item-height: 200px;
 	}
 
 	.carousel-default-items {
-		--item-width: 200px;
+		--item-width: 170px;
 		--item-height: calc(var(--item-width) / (calc(16 / 9)));
 	}
 
