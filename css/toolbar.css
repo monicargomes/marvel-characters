@@ -8,9 +8,6 @@
   .toolbar {
     padding: 1rem;
   }
-  .search {
-    margin-right: 3rem;
-  }
   .search-dropdown {
     position: absolute;
     left: 0;
@@ -31,13 +28,11 @@
   .toolbar {
     padding: 1rem 2rem;
   }
-  .search {
-    margin-right: 4rem;
-  }
+
   .search-dropdown {
     width: 25rem;
     position: absolute;
-    right: 5rem;
+    right: 1rem;
     top: 4.5rem;
     line-height: 1.5rem;
   }
@@ -46,7 +41,8 @@
 .toolbar {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
   height: 2.5rem;
   background-color: var(--primary-dark-color);
   z-index: +1;

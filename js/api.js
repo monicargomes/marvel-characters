@@ -77,6 +77,7 @@ function readComicURL(comic) {
 
 function processRequestError(error) {
   console.log(error);
+  $('.error-message').fadeIn();
 }
 
 function getHash() {

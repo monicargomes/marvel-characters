@@ -62,3 +62,8 @@ footer {
 .container {
   display: none;
 }
+
+.error-message {
+  text-align: center;
+  display: none;
+}
