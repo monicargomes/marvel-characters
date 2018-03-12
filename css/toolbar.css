@@ -77,7 +77,8 @@
   .search-dropdown {
     width: 25rem;
     position: absolute;
-    right: 1rem;
+    left: auto;
+    right: 2rem;
     top: 4.5rem;
     line-height: 1.5rem;
   }
