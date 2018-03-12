@@ -1,20 +1,65 @@
-@media (max-width: 767px) {
-  .search-input {
-    width: 10rem;
-  }
-  .icon-search {
-    font-size: 2rem;
-  }
-  .toolbar {
-    padding: 1rem;
-  }
-  .search-dropdown {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 4.5rem;
-    line-height: 2rem;
-  }
+.toolbar {
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.5rem;
+  background-color: var(--primary-dark-color);
+  z-index: +1;
+}
+
+.marvel-logo {
+  height: 100%;
+  float: left;
+}
+
+.search-input {
+  width: 10rem;
+  cursor: text;
+  line-height: 2rem;
+  padding: 0 1rem;
+  background-color: var(--primary-dark-color);
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  display: none;
+}
+
+.search {
+  float: right;
+}
+
+.icon-search {
+  font-size: 2rem;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.search-dropdown {
+  padding: 1rem;
+  background-color: var(--primary-dark-color);
+  opacity: 0.8;
+  border-radius: 10px;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4.5rem;
+  line-height: 2rem;
+}
+
+.search-dropdown li:hover {
+  text-shadow: 2px 2px 2px var(--accent-color);
+  font-weight: bolder;
+}
+
+.loading-icon {
+  width: 30px;
+}
+
+.loading {
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -36,59 +81,4 @@
     top: 4.5rem;
     line-height: 1.5rem;
   }
-}
-
-.toolbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2.5rem;
-  background-color: var(--primary-dark-color);
-  z-index: +1;
-}
-
-.marvel-logo {
-  height: 100%;
-  float: left;
-}
-
-.search-input {
-  cursor: text;
-  line-height: 2rem;
-  background-color: var(--primary-dark-color);
-  border: 2px solid var(--text-color);
-  color: var(--text-color);
-  display: none;
-}
-
-.search {
-  float: right;
-}
-
-.icon-search {
-  cursor: pointer;
-  vertical-align: middle;
-}
-
-.search-dropdown {
-  padding: 1rem;
-  background-color: var(--primary-dark-color);
-  opacity: 0.8;
-  border-radius: 10px;
-  cursor: pointer;
-  display: none;
-}
-
-.search-dropdown li:hover {
-  text-shadow: 2px 2px 2px var(--accent-color);
-  font-weight: bolder;
-}
-
-.loading-icon {
-  width: 30px;
-}
-
-.loading {
-  text-align: center;
 }

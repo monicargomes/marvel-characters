@@ -1,50 +1,11 @@
-@media (max-width: 767px) {
-  .featured-character-img {
-    display: block;
-    text-align: center;
-  }
-
-  .featured-character-details {
-    margin: auto;
-  }
-
-  .character-comics{
-    height: 110px;
-  }
-
-  .character-comic-img{
-    width: 70px;
-    height: 100px;
-  }
-}
-
-@media (min-width: 768px) {
-  .featured-character {
-    width: 80%;
-  }
-
-  .featured-character-img {
-    display: flex;
-    text-align: left;
-  }
-
-  .featured-character-details {
-    margin: auto 1rem;
-  }
-
-  .character-comics{
-    height: 160px;
-  }
-
-  .character-comic-img{
-    width: 100px;
-    height: 150px;
-  }
-}
-
 .featured-character {
   margin: auto;
   padding-bottom: 1rem;
+}
+
+.featured-character-img {
+  display: block;
+  text-align: center;
 }
 
 .character-links>li {
@@ -84,6 +45,7 @@
 .featured-character-details {
   width: 100%;
   height: 100%;
+  margin: auto;
 }
 
 .character-name {
@@ -97,10 +59,40 @@
 }
 
 .character-comics{
+  height: 110px;
   display: flex;
   overflow: scroll;
 }
 
+.character-comic-img{
+  width: 70px;
+  height: 100px;
+}
+
 .character-comics>li{
   margin: auto 1ch auto 0;
+}
+
+@media (min-width: 768px) {
+  .featured-character {
+    width: 80%;
+  }
+
+  .featured-character-img {
+    display: flex;
+    text-align: left;
+  }
+
+  .featured-character-details {
+    margin: auto 1rem;
+  }
+
+  .character-comics{
+    height: 160px;
+  }
+
+  .character-comic-img{
+    width: 100px;
+    height: 150px;
+  }
 }
