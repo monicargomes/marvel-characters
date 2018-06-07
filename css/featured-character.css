@@ -58,12 +58,6 @@
   text-align: justify;
 }
 
-.character-comics{
-  height: 110px;
-  display: flex;
-  overflow: scroll;
-}
-
 .character-comic-img{
   width: 70px;
   height: 100px;
@@ -71,7 +65,16 @@
 
 .character-comics>li{
   margin: auto 1ch auto 0;
+
 }
+
+.character-comics{
+  height: 100px;
+  display: flex;
+  overflow-x: scroll;
+}
+
+
 
 @media (min-width: 768px) {
   .featured-character {
@@ -88,8 +91,15 @@
   }
 
   .character-comics{
-    height: 160px;
+    height: auto;
+    display: inline-block;
+    text-align: center;
   }
+
+  .character-comics>li{
+  margin: 1ch;
+  display: inline-block;
+}
 
   .character-comic-img{
     width: 100px;

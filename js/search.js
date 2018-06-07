@@ -8,7 +8,6 @@ function addSearchIconListener() {
 function addSearchListener() {
   $('.search-input').on('input', () => {
     var name = $('.search-input').val().trim()
-    showLoading();
     $('.search-dropdown').slideDown();
 
     readCharacterByName(name, characters => {
@@ -30,6 +29,4 @@ function createDropdownItem(character) {
   });
 }
 
-function showLoading(){
-  $('<li>').addClass('loading').append($('<img>').attr('src', 'img/spinner-icon.gif').addClass('loading-icon')).appendTo('.search-dropdown');
-}
+
