@@ -1,5 +1,7 @@
 # Marvel Characters
 LIVE DEMO: [Marvel Characters](https://monicargomes.github.io/marvel-character/)
+
+Refactored version using React.js: [Marvel Characters React](https://github.com/monicargomes/marvel-characters-react)
 ## Summary
 1. [Introduction](#introduction)  
     * [Objective](#objective)
@@ -33,14 +35,14 @@ The main purpose of this repository is to exercise Software Engineering abilitie
 <a name="requirements" />
 
 ### Requirements
-| ID | Description | Story Points |
-| --- | --- | --- |
-| REQ01 | Request Marvel Comics API for a list of characters and build a carousel in pure CSS with the response | |
-| REQ02 | Request more characters from the API when the user scrolls until the end | |
-| REQ03 | Request Marvel Comics API for the details of a chosen character and display them through a clean user interface | |
-| REQ04 | Display the details of a random character everytime the page is refreshed | |
-| REQ05 | Allows the content to be adjusted based on the size of the screen (responsiveness) | |
-| REQ06 | Search character by name and display the ten first matches to the user input | |
+| ID | Description |
+| --- | --- |
+| REQ01 | Request Marvel Comics API for a list of characters and build a carousel in pure CSS with the response |
+| REQ02 | Request more characters from the API when the user scrolls until the end |
+| REQ03 | Request Marvel Comics API for the details of a chosen character and display them through a clean user interface |
+| REQ04 | Display the details of a random character everytime the page is refreshed |
+| REQ05 | Allows the content to be adjusted based on the size of the screen (responsiveness) |
+| REQ06 | Search character by name and display the ten first matches to the user input |
 
 <a name="architecture" />
 
@@ -49,7 +51,7 @@ The main purpose of this repository is to exercise Software Engineering abilitie
 <a name="architecture-overview" />
 
 ### Overview
-This project was built with HTML, CSS and JavaScript. A single page framework such as [Create React App](https://github.com/facebook/create-react-app) was not used for this project because of the extra complexity added by it, considering that the main purpose of this work is to lay down the foundation of frontend development. The backend is provided by Marvel through [Marvel Comics API](https://developer.marvel.com/), there is no need to implement anything other than that to fulfill the requirements for this project. JQuery was also used in order to reduce the amount of code written, such as for Ajax requests.
+This project was built with HTML, CSS and JavaScript. A single page framework was not used for this project because of the extra complexity added by it, considering that the main purpose of this work is to lay down the foundation of frontend development (a refactored version using React.js can be found [here](https://github.com/monicargomes/marvel-characters-react)). The backend is provided by Marvel through [Marvel Comics API](https://developer.marvel.com/), there is no need to implement anything other than that to fulfill the requirements for this project. JQuery was also used in order to reduce the amount of code written, such as for Ajax requests.
 
 <a name="characters-carousel" />
 
